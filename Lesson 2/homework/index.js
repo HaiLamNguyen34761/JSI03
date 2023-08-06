@@ -7,7 +7,7 @@ arr1.forEach((item) => {
   }
 })
 
-//console.log(arr2);
+//console.log(arr2)
 
 //Bai 2
 
