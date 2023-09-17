@@ -44,7 +44,8 @@ loginBtn.addEventListener('click',handleLogin)
   const btnGoogle = document.getElementById('btnGoogle');
   const btnFaceBook = document.getElementById('btnFacebook');
 
-      //Sing in with Google
+
+  
       btnGoogle.addEventListener('click', e => {
           firebase.auth().signInWithPopup(ggProvider).then(function(result) {
               var token = result.credential.accessToken;
@@ -57,7 +58,7 @@ loginBtn.addEventListener('click',handleLogin)
               console.error('Error: hande error here>>>', error.code)
           })
       }, false)
-
+        
       //Sing in with Facebook
       btnFaceBook.addEventListener('click', e => {
           firebase.auth().signInWithPopup(fbProvider).then(function(result) {

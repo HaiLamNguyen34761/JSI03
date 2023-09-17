@@ -1,29 +1,5 @@
 let todoList = [
-    {
-        id: 1,
-        title: "Lam BTVN JSI03",
-        completed: false
-    },
-    {
-        id: 2,
-        title: "quis ut nam facilis et officia qui",
-        completed: false
-    },
-    {
-        id: 3,
-        title: "quet nha",
-        completed: false
-    },
-    {
-        id: 4,
-        title: "rua bat",
-        completed: true
-    },
-    {
-        id: 5,
-        title: "lau nha",
-        completed: false
-    },
+    
 ]
 
 const todolistelm = document.getElementById('Todolist')
@@ -66,7 +42,7 @@ const handleAddTodo = () =>{
         alert('ban can phai nhap gi do');
     }
     else{
-        todoList.push({
+        todoList.unshift({
             id: Math.floor(Math.random() * 1000),
             title: inputTodoelm.value,
             completed: false,
@@ -87,5 +63,27 @@ const handleAddTodo = () =>{
     rendertodolist();
  }
 addBtn.addEventListener('click', handleAddTodo)
-getLocalStorage();
+//getLocalStorage();
+const gettodolist = () => {
+    todoList = fetch("https://jsonplaceholder.typicode.com/todos?userId=1").then((response) => {
+       return response.json();
+    }).then((data)=>{
+        console.log(data);
+        todoList = data;
+        rendertodolist();
+    })
+}
+gettodolist();
 
+const allbtn = document.getElementById('All')
+const completedbtn = document.getElementById("Completed")
+const undonebtn = document.getElementById("undone");
+
+const completed = () => {
+    const completed1 = gettodolist.foreach ((item) =>{
+        
+    })
+}
+allbtn.addEventListener(click)
+completedbtn.addEventListener(click)
+undonebtn.addEventListener(click)
